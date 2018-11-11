@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemys.gd" type="Script" id=1]
+[ext_resource path="res://characters.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.0512, 26.4059 )
+
+[node name="Enemys" type="Area2D"]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+enemie_type = null
+speed = 150
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="square" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 9, 151, 52, 56 )
+_sections_unfolded = [ "Region" ]
+
+[node name="triangle" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 70, 144, 61, 59 )
+_sections_unfolded = [ "Region" ]
+
+[node name="circel" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 139, 147, 55, 59 )
+_sections_unfolded = [ "Region" ]
+
+[connection signal="area_entered" from="." to="." method="_on_Enemys_area_entered"]
