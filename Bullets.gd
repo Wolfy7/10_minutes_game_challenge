@@ -10,17 +10,14 @@ export (int) var speed = 150
 func _ready():
 	match bullet_type:
 		BULLET_TYPES.circel:
-			set_meta("Tag", "Circel")
 			$circel.visible = true
 			$triangle.visible = false
 			$square.visible = false
 		BULLET_TYPES.square:
-			set_meta("Tag", "Square")
 			$square.visible = true
 			$circel.visible = false
 			$triangle.visible = false
 		BULLET_TYPES.triangle:
-			set_meta("Tag", "Triangle")
 			$triangle.visible = true
 			$circel.visible = false
 			$square.visible = false

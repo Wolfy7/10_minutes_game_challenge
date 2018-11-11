@@ -1,4 +1,4 @@
-extends Area2D
+extends Position2D
 
 export (PackedScene) var enemies
 
@@ -17,4 +17,5 @@ func _on_Timer_timeout():
 	var type = randi() % enemie.ENEMIE_TYPES.size()
 	enemie.enemie_type = type
 	add_child(enemie)
+	#print(enemie.enemie_type)
 	$Timer.start()

@@ -22,6 +22,7 @@ func shoot(type : String) -> void:
 		"triangle":
 			bullet.bullet_type = bullet.BULLET_TYPES.triangle
 	add_child(bullet)
+	#print(bullet.bullet_type)
 	can_shoot = false
 	$Timer.start()
 
